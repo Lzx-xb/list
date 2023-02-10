@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>试题1</title>
+</head>
+<body>
+    <div class="fa">
+        <div class="tab">欢迎您</div>
+        <div class="tab">退出登录</div>
+    </div>
+</body>
+</html>
+
+<script>
+    const list = [
+        {lang: 'nodejs'},
+        {lang: 'golang'},
+        {lang: 'php'},
+        {lang: 'nodejs'},
+        {lang: 'php'},
+        {lang: 'php'},
+    ]
+    let map = new Map();
+    let obj = {};
+    list.forEach((item,index)=>{
+        if(map.get(item.lang)){
+            map.set(item.lang,map.get(item.lang) + 1);
+            obj[item.lang] = map.get(item.lang) 
+        }else{
+            map.set(item.lang,1);
+            obj[item.lang] = map.get(item.lang) 
+        }
+    })
+    console.log(obj)
+
+
+    // 本地域名与第三方服务接口域名不一致，导致跨域。
+    /*解决跨域的方法：
+    1，配置Nginx，本地域名转发
+    2，使用Proxy代理
+    3，java设置Access-Control-Allow-Origin允许多域名访问*/
+
+    
+</script>
+<style>
+    .fa{
+        display: flex;
+        justify-content: space-between;
+        background-color: red;
+    }
+    .tab{
+        background-color: aquamarine;
+        width: 20%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-weight: bolder;
+    }
+</style>
