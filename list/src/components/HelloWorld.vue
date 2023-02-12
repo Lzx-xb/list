@@ -1,43 +1,30 @@
 <script setup>
 defineProps({
-  msg: {
+  bg: {
     type: String,
+    required: true,
+  },
+  count: {
+    type: Number,
     required: true,
   },
 });
 </script>
 
 <template>
-  <div class="greetings">
-    <h1 class="green">{{ msg }}</h1>
-    <h3>
-      You’ve successfully created a project with
-      <a href="https://vitejs.dev/" target="_blank" rel="noopener">Vite</a> +
-      <a href="https://vuejs.org/" target="_blank" rel="noopener">Vue 3</a>.
-    </h3>
+  <div class="box" :style="{ backgroundColor: bg }">
+    <span class="num">{{ count }}</span>
   </div>
 </template>
 
 <style scoped>
-h1 {
-  font-weight: 500;
-  font-size: 2.6rem;
-  top: -10px;
+.box {
+  width: 100%;
+  height: 500px;
+  display: flex;
+  justify-content: center;
 }
-
-h3 {
-  font-size: 1.2rem;
-}
-
-.greetings h1,
-.greetings h3 {
-  text-align: center;
-}
-
-@media (min-width: 1024px) {
-  .greetings h1,
-  .greetings h3 {
-    text-align: left;
-  }
+.num {
+  font-weight: bolder;
 }
 </style>
